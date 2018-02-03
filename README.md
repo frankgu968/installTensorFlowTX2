@@ -3,7 +3,7 @@
 Special thanks to JetsonHacks for putting together the base of this script chain. Modifications were made with help of the Nvidia Developer forums and tensorflow official site to compile tensorflow v1.5.0 for python3. Original project can be found here:
 https://github.com/jetsonhacks/installTensorFlowJetsonTX
 
-Feb 3, 2017  
+Feb 3, 2018  
 Frank Gu
 
 Install TensorFlow v1.3 on NVIDIA Jetson TX2 Development Kit
@@ -15,12 +15,13 @@ Jetson TX2 is flashed with JetPack 3.2 Developer Preview which installs:
 
 Please check to ensure cuDNN is installed under `/usr/lib/aarch64-linux-gnu` following CUDA Toolkit installation. I found that a manual installation was necessary.
 
-## Dump wheel making
+## Dumb wheel making
 run `./makePy3TFWheel.sh`
 
 This script will run through all the steps, and cross your fingers...
 Uses your `$HOME` directory as the temporary build directory, and eventually generates a wheel there.
 
+## Building preparations
 ### Pre-built installation
 
 If you are only interested in installing Tensorflow on the TX2, not building from source, pre-built wheel files are available here:
