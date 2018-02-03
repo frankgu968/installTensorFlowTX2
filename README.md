@@ -1,17 +1,29 @@
 # installTensorFlowTX2
-September 13, 2017
-JetsonHacks
+
+Special thanks to JetsonHacks for putting together the base of this script chain. Modifications were made with help of the Nvidia Developer forums and tensorflow official site to compile tensorflow v1.5.0 for python3. Original project can be found here:
+https://github.com/jetsonhacks/installTensorFlowJetsonTX
+
+Feb 3, 2017  
+Frank Gu
 
 Install TensorFlow v1.3 on NVIDIA Jetson TX2 Development Kit
 
-Jetson TX2 is flashed with JetPack 3.1 which installs:
-* L4T 28.1 an Ubuntu 16.04 64-bit variant (aarch64)
-* CUDA 8.0
-* cuDNN 6.0
+Jetson TX2 is flashed with JetPack 3.2 Developer Preview which installs:
+* L4T 28.2 an Ubuntu 16.04 64-bit variant (aarch64)
+* CUDA 9.0.252
+* cuDNN 7.0.5
+
+Please check to ensure cuDNN is installed under `/usr/lib/aarch64-linux-gnu` following CUDA Toolkit installation. I found that a manual installation was necessary.
+
+## Dump wheel making
+run `./makePy3TFWheel.sh`
+
+This script will run through all the steps, and cross your fingers...
+Uses your `$HOME` directory as the temporary build directory, and eventually generates a wheel there.
 
 ### Pre-built installation
 
-If you are only interested in installing Tensorflow on the TX2, not building from source, pre-built wheel files are available here: https://github.com/jetsonhacks/installTensorFlowJetsonTX
+If you are only interested in installing Tensorflow on the TX2, not building from source, pre-built wheel files are available here:
 
 If you are interested in building from source, read on.
 ### Preparation
@@ -65,11 +77,11 @@ $ pip install $HOME/<em>wheel file</em>
 
 For Python 3.X
 
-$ pip3 install $HOME/<em>wheel file</em> 
+$ pip3 install $HOME/<em>wheel file</em>
 
 
 ### Notes
-This TensorFlow installation procedure was derived from these discussion threads: 
+This TensorFlow installation procedure was derived from these discussion threads:
 
 <ul>
 <li>https://github.com/tensorflow/tensorflow/issues/851</li>
@@ -79,6 +91,11 @@ This TensorFlow installation procedure was derived from these discussion threads
 </ul>
 
 ### Release Notes
+Feb 3, 2018
+* L4T 28.2 (JetPack 3.2 DP)
+* Tensorflow 1.5
+* Several patches were applied to workaround bazel version checking bug and configure.py input variable checking bug
+
 September 13, 2017
 * L4T 28.1 (JetPack 3.1)
 * TensorFlow 1.3

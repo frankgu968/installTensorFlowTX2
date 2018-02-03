@@ -1,10 +1,10 @@
 #!/bin/bash
 # NVIDIA Jetson TX2
 # Install TensorFlow dependencies
-# Install Java
-sudo add-apt-repository ppa:webupd8team/java
+# Install Java JDK 8
 sudo apt-get update
-sudo apt-get install oracle-java8-installer -y
+sudo apt-get install build-essential openjdk-8-jdk python zip -y
+
 # Install other dependencies
 sudo apt-get install zip unzip autoconf automake libtool curl zlib1g-dev maven -y
 # Install Python 3.x
